@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ingeniería en Informática</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        .container {
+            max-width: 900px;
+            margin: auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .section-header {
+            background-color: #3498db;
+            color: white;
+            padding: 15px 20px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+        .section-header:hover {
+            background-color: #2980b9;
+        }
+        .section-content {
+            display: none; /* Hidden by default */
+            padding: 20px;
+            background-color: #ecf0f1;
+            border-left: 5px solid #3498db;
+            margin-bottom: 20px;
+            border-radius: 0 0 5px 5px;
+        }
+        .section-content p, .section-content ul {
+            margin-bottom: 10px;
+        }
+        .section-content ul {
+            list-style-type: disc;
+            margin-left: 20px;
+        }
+        .section-content li {
+            margin-bottom: 5px;
+        }
+        .arrow {
+            font-size: 1.2em;
+            transition: transform 0.3s ease;
+        }
+        .section-header.active .arrow {
+            transform: rotate(90deg);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Todo sobre la Ingeniería en Informática</h1> <img src="//Agregar la ruta de la imagen aqui" alt="" width="250" height="">
+
+        <div class="section-header" onclick="toggleSection('purpose')">
+            <span>¿Para qué sirve la Ingeniería en Informática?</span>
+            <span class="arrow">&#9654;</span> </div>
+        <div id="purpose" class="section-content">
+            <p>La Ingeniería en Informática es una disciplina que combina los principios de la ingeniería con los conocimientos de las ciencias de la computación. Su propósito principal es diseñar, desarrollar, implementar y mantener sistemas de software y hardware, así como gestionar redes y bases de datos.</p>
+            <p>Los ingenieros informáticos son esenciales en la creación de soluciones tecnológicas que impactan todos los aspectos de la vida moderna, desde aplicaciones móviles y videojuegos hasta sistemas de inteligencia artificial y ciberseguridad. En resumen, su objetivo es hacer que la tecnología funcione de manera eficiente y segura para resolver problemas complejos.</p>
+        </div>
+
+        <div class="section-header" onclick="toggleSection('characteristics')">
+            <span>Características principales</span>
+            <span class="arrow">&#9654;</span>
+        </div>
+        <div id="characteristics" class="section-content">
+            <ul>
+                <li>Resolución de Problemas: Habilidad para analizar y resolver desafíos tecnológicos complejos.</li>
+                <li>Pensamiento Lógico y Analítico: Fundamental para el diseño de algoritmos y la depuración de código.</li>
+                <li>Innovación Constante: Es un campo en continua evolución, requiriendo aprendizaje y adaptación permanentes.</li>
+                <li>Trabajo en Equipo:Muchos proyectos se desarrollan en equipos multidisciplinarios.</li>
+                <li>Creatividad:Necesaria para diseñar soluciones nuevas y eficientes.</li>
+                <li>Atención al Detalle:Crucial para identificar errores y garantizar la calidad del software.</li>
+            </ul>
+        </div>
+
+        <div class="section-header" onclick="toggleSection('advantages')">
+            <span>Ventajas de estudiar Ingeniería en Informática</span>
+            <span class="arrow">&#9654;</span>
+        </div>
+        <div id="advantages" class="section-content">
+            <ul>
+                <li>Alta Demanda Laboral:El sector tecnológico siempre está en crecimiento, asegurando amplias oportunidades de empleo.</li>
+                <li>Salarios Competitivos:Generalmente, los profesionales de esta área disfrutan de remuneraciones atractivas.</li>
+                <li>Versatilidad Profesional:Posibilidad de trabajar en diversos sectores (salud, finanzas, entretenimiento, etc.) y roles (desarrollador, analista, consultor, etc.).</li>
+                <li>Impacto Global:Contribuir a la creación de tecnologías que cambian el mundo.</li>
+                <li>Desarrollo Continuo:Siempre hay nuevas tecnologías y lenguajes por aprender, lo que evita la rutina.</li>
+                <li>Flexibilidad Laboral:Opciones de teletrabajo o trabajo por proyectos son comunes.</li>
+            </ul>
+        </div>
+
+        <div class="section-header" onclick="toggleSection('disadvantages')">
+            <span>Desventajas de la Ingeniería en Informática</span>
+            <span class="arrow">&#9654;</span>
+        </div>
+        <div id="disadvantages" class="section-content">
+            <ul>
+                <li>Requiere Actualización Constante:La rápida evolución tecnológica exige un aprendizaje continuo fuera del horario laboral.</li>
+                <li>Estrés y Presión:Proyectos con plazos ajustados y la necesidad de resolver problemas complejos pueden generar estrés.</li>
+                <li>Sedentarismo:Gran parte del trabajo implica estar sentado frente a una computadora.</li>
+                <li>Exposición a la Pantalla:Riesgos para la vista y la salud debido al uso prolongado de dispositivos.</li>
+                <li>Alta Competencia:Aunque hay demanda, también hay muchos profesionales, lo que puede aumentar la competencia en ciertos nichos.</li>
+                <li>Problemas de Depuración (Debugging):Pasar horas buscando un pequeño error en el código puede ser frustrante.</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        function toggleSection(id) {
+            const content = document.getElementById(id);
+            const header = content.previousElementSibling; // Get the header div
+            
+            if (content.style.display === 'block') {
+                content.style.display = 'none';
+                header.classList.remove('active');
+            } else {
+                // Hide all other sections before showing the new one
+                const allContents = document.querySelectorAll('.section-content');
+                allContents.forEach(item => {
+                    if (item.id !== id) {
+                        item.style.display = 'none';
+                        item.previousElementSibling.classList.remove('active');
+                    }
+                });
+                
+                content.style.display = 'block';
+                header.classList.add('active');
+            }
+        }
+    </script>
+</body>
+</html>
